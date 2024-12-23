@@ -18,9 +18,7 @@ jobs:
       with:
         dotnet-version: '8.0'  # Use .NET 6.0 or higher
 
-    - name: Install Visual Studio Build Tools
-      run: |
-        choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.WebDevelopment"
+  
 
     - name: Restore dependencies
       run: dotnet restore
@@ -36,5 +34,5 @@ jobs:
 
     - name: Deploy to IIS
       run: |
-        scp -r C:\PublishFolder/* shahbaz.khan@localhost:C:/inetpub/wwwroot/Druk
-        ssh -o StrictHostKeyChecking=no shahbaz.khan@localhost "iisreset"
+        scp -P 8001 -r C:\PublishFolder/* shahbaz.khan@localhost:C:/inetpub/wwwroot/Druk
+        ssh -P 8001 -o StrictHostKeyChecking=no shahbaz.khan@localhost "iisreset"

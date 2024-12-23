@@ -3,7 +3,7 @@ name: CI/CD for .NET App to IIS
 on:
   push:
     branches:
-      - main  # Specify your branch name here
+      - master  # Specify your branch name here
 
 jobs:
   deploy:

@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\wwwroot\\home.html",
+      "PackagePath": "staticwebassets\\home.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AlertSending.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AlertSending.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AlertSending.props",
+      "PackagePath": "build\\AlertSending.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AlertSending.props",
+      "PackagePath": "buildMultiTargeting\\AlertSending.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AlertSending.props",
+      "PackagePath": "buildTransitive\\AlertSending.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

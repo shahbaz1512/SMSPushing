@@ -1,0 +1,4 @@
+2024-12-18 12:36:38 [Information] Now listening on: "http://[::]:7001"
+2024-12-18 12:36:38 [Information] Application started. Press Ctrl+C to shut down.
+2024-12-18 12:36:38 [Information] Hosting environment: "Development"
+2024-12-18 12:36:38 [Information] Content root path: "E:\SOR\Alerts\AlertSending\AlertSending"

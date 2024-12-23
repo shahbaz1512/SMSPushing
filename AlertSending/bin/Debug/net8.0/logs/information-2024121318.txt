@@ -1,0 +1,9 @@
+2024-12-13 18:28:07 [Information] Now listening on: "http://[::]:7001"
+2024-12-13 18:28:07 [Information] Application started. Press Ctrl+C to shut down.
+2024-12-13 18:28:07 [Information] Hosting environment: "Development"
+2024-12-13 18:28:07 [Information] Content root path: "E:\SOR\Alerts\AlertSending\AlertSending"
+2024-12-13 18:28:16 [Information] Request starting "HTTP/1.1" "POST" "http"://"localhost:7001""""/api/EmailSms/sendemail""" - "application/json" 389
+2024-12-13 18:28:16 [Information] Executing endpoint '"EmailSmsController.SendEmail (AlertSending)"'
+2024-12-13 18:28:16 [Information] Route matched with "{action = \"SendEmail\", controller = \"EmailSms\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SendEmail()" on controller "EmailSmsController" ("AlertSending").
+2024-12-13 18:28:16 [Information] Executing action method "EmailSmsController.SendEmail (AlertSending)" - Validation state: Valid
+2024-12-13 18:28:20 [Information]  Request Recieved For SendEmail 

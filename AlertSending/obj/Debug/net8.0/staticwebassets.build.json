@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "Hash": "SLWYogIniuqlrHjhrPpE+dBtQjtLiBtaBf3EnMZKfGk=",
+  "Source": "AlertSending",
+  "BasePath": "_content/AlertSending",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AlertSending\\wwwroot",
+      "Source": "AlertSending",
+      "ContentRoot": "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\wwwroot\\",
+      "BasePath": "_content/AlertSending",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\wwwroot\\home.html",
+      "SourceId": "AlertSending",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\wwwroot\\",
+      "BasePath": "_content/AlertSending",
+      "RelativePath": "home#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3gy4kq6ouj",
+      "Integrity": "YyOzboT7d84YjPyCZmHN831mRifFHz3oqtZwznWqs1E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\home.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "home.3gy4kq6ouj.html",
+      "AssetFile": "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\wwwroot\\home.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "142"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YyOzboT7d84YjPyCZmHN831mRifFHz3oqtZwznWqs1E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 12 Nov 2024 13:44:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3gy4kq6ouj"
+        },
+        {
+          "Name": "label",
+          "Value": "home.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-YyOzboT7d84YjPyCZmHN831mRifFHz3oqtZwznWqs1E="
+        }
+      ]
+    },
+    {
+      "Route": "home.html",
+      "AssetFile": "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\wwwroot\\home.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "142"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"YyOzboT7d84YjPyCZmHN831mRifFHz3oqtZwznWqs1E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 12 Nov 2024 13:44:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-YyOzboT7d84YjPyCZmHN831mRifFHz3oqtZwznWqs1E="
+        }
+      ]
+    }
+  ]
+}

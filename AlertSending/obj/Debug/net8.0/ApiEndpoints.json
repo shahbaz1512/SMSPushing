@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "EmailSmsController",
+    "Method": "SendEmail",
+    "RelativePath": "api/EmailSms/sendemail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmailSmsController",
+    "Method": "SendSms",
+    "RelativePath": "api/EmailSms/sendsms",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "SmsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

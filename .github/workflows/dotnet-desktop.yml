@@ -1,0 +1,40 @@
+name: CI/CD for .NET App to IIS
+
+on:
+  push:
+    branches:
+      - main  # Specify your branch name here
+
+jobs:
+  deploy:
+    runs-on: windows-latest  # Use a Windows runner
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up .NET 8.0 SDK
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '8.0'  # Use .NET 6.0 or higher
+
+    - name: Install Visual Studio Build Tools
+      run: |
+        choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.WebDevelopment"
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Publish the application
+      run: |
+        dotnet publish -c Release -o C:\PublishFolder
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Deploy to IIS
+      run: |
+        scp -r C:\PublishFolder/* shahbaz.khan@localhost:C:/inetpub/wwwroot/Druk
+        ssh -o StrictHostKeyChecking=no shahbaz.khan@localhost "iisreset"

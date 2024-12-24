@@ -13,13 +13,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       
-    - name: Set up SSH key
-      run: |
-          mkdir -p C:\Users\shahbaz.khan\.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > C:\Users\shahbaz.khan\.ssh\id_rsa
-          chmod 600 C:\Users\shahbaz.khan\.ssh\id_rsa
-          # Optionally, add the public key to known_hosts (if needed)
-          ssh-keyscan -t rsa localhost >> C:\Users\shahbaz.khan\.ssh\known_hosts
+   # - name: Set up SSH key
+    #  run: |
+        #  mkdir -p C:\Users\shahbaz.khan\.ssh
+        #  echo "${{ secrets.SSH_PRIVATE_KEY }}" > C:\Users\shahbaz.khan\.ssh\id_rsa
+        #  chmod 600 C:\Users\shahbaz.khan\.ssh\id_rsa
+        #  ssh-keyscan -t rsa localhost >> C:\Users\shahbaz.khan\.ssh\known_hosts
           
     - name: Set up .NET 8.0 SDK
       uses: actions/setup-dotnet@v2

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\AlertSending.csproj": {}
+    "E:\\GITProjects\\SMSPushing\\AlertSending\\AlertSending.csproj": {}
   },
   "projects": {
-    "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\AlertSending.csproj": {
+    "E:\\GITProjects\\SMSPushing\\AlertSending\\AlertSending.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\AlertSending.csproj",
+        "projectUniqueName": "E:\\GITProjects\\SMSPushing\\AlertSending\\AlertSending.csproj",
         "projectName": "AlertSending",
-        "projectPath": "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\AlertSending.csproj",
+        "projectPath": "E:\\GITProjects\\SMSPushing\\AlertSending\\AlertSending.csproj",
         "packagesPath": "C:\\Users\\shahbaz.khan\\.nuget\\packages\\",
-        "outputPath": "E:\\SOR\\Alerts\\AlertSending\\AlertSending\\obj\\",
+        "outputPath": "E:\\GITProjects\\SMSPushing\\AlertSending\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

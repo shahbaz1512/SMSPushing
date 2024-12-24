@@ -31,6 +31,7 @@ public class EmailSmsController : Controller
             _emailrequest = JsonConvert.DeserializeObject<EmailRequest>(requestBody);
             Log.Information(" Request Recieved For SendEmail ");
             //await _emailSender.SendEmailAsync(_emailrequest.AlertAddress, _emailrequest.MailID, _emailrequest.Subject, _emailrequest.Initials, _emailrequest.Regards, _emailrequest.Bankname, _emailrequest.Attachment, _emailrequest.dsbody, _emailrequest.bodyattachment, _emailrequest.mailmsgDesc);
+            //await _emailSender.SendEmailAsync(_emailrequest.AlertAddress, _emailrequest.MailID, _emailrequest.Subject, _emailrequest.Initials, _emailrequest.Regards, _emailrequest.Bankname, _emailrequest.Attachment, _emailrequest.dsbody, _emailrequest.bodyattachment, _emailrequest.mailmsgDesc);
             emailResponse.ResponseCode = await _emailSender.SendEmailAsync(_emailrequest);
             Log.Information(" Response : " + emailResponse.ResponseCode);
             return StatusCode(StatusCodes.Status200OK, emailResponse);

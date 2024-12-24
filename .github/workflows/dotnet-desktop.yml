@@ -32,7 +32,10 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+    - name: Test SSH connection
+      run: ssh -p 8001 -o StrictHostKeyChecking=no shahbaz.khan@localhost "echo SSH connection successful"
+
     - name: Deploy to IIS
       run: |
-        scp -P 8001 -r C:\PublishFolder/* shahbaz.khan@localhost:C:/inetpub/wwwroot/Druk
-        ssh -P 8001 -o StrictHostKeyChecking=no shahbaz.khan@localhost "iisreset"
+        scp -P 8001 -r C:\PublishFolder\* shahbaz.khan@localhost:C:/inetpub/wwwroot/Druk
+        ssh -p 8001 -o StrictHostKeyChecking=no shahbaz.khan@localhost "iisreset"

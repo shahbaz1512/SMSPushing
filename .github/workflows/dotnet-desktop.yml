@@ -18,22 +18,30 @@ jobs:
       with:
         dotnet-version: '8.0'  # Use .NET 6.0 or higher
 
-  
-
     - name: Restore dependencies
       run: dotnet restore
 
+    - name: Create publish directory
+      run: New-Item -ItemType Directory -Force -Path C:\PublishFolder
+
     - name: Publish the application
-      run: |
-        dotnet publish -c Release -o C:\PublishFolder
+      run: dotnet publish -c Release -o C:\PublishFolder
 
     - name: Set up SSH
       uses: webfactory/ssh-agent@v0.5.3
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+    - name: Set SSH key permissions
+      run: chmod 600 ~/.ssh/id_rsa
+
+    - name: Add known hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan -p 8001 localhost >> ~/.ssh/known_hosts
+
     - name: Test SSH connection
-      run: ssh -p 8001 -o StrictHostKeyChecking=no shahbaz.khan@localhost "echo SSH connection successful"
+      run: ssh -vvv -p 8001 -o StrictHostKeyChecking=no shahbaz.khan@localhost "echo SSH connection successful"
 
     - name: Deploy to IIS
       run: |

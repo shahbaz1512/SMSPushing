@@ -12,7 +12,14 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
+      
+    - name: Start SSH server on port 8001
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y openssh-server
+          sudo service ssh start
+          sudo ufw allow 8001/tcp  # Allow SSH on port 8001
+          
     - name: Set up .NET 8.0 SDK
       uses: actions/setup-dotnet@v2
       with:

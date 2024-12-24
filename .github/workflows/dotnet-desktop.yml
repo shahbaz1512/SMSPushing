@@ -32,9 +32,6 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Set SSH key permissions
-      run: chmod 600 ~/.ssh/id_rsa
-
     - name: Add known hosts
       run: |
         mkdir -p ~/.ssh

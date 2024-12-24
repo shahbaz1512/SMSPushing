@@ -36,7 +36,7 @@
                 else
                 {
                     Log.Information(string.Format("SMS Sending DATA/Mobile Number is Incorrect : {0},\t {1} ", MobileNumber, SMS));
-                   // Log.Information(string.Format("SMS Sending DATA/Mobile Number is Incorrect : {0},\t {1} ", MobileNumber, SMS));
+                   Log.Information(string.Format("SMS Sending DATA/Mobile Number is Incorrect : {0},\t {1} ", MobileNumber, SMS));
                 }
             }
             catch (Exception ex)

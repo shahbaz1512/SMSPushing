@@ -1,53 +1,34 @@
-name: CI/CD for .NET App to IIS
+name: Deploy .NET App to IIS
 
 on:
   push:
     branches:
-      - master  # Specify your branch name here
+      - main
 
 jobs:
-  deploy:
-    runs-on: windows-latest  # Use a Windows runner
-    
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      
-   # - name: Set up SSH key
-    #  run: |
-        #  mkdir -p C:\Users\shahbaz.khan\.ssh
-        #  echo "${{ secrets.SSH_PRIVATE_KEY }}" > C:\Users\shahbaz.khan\.ssh\id_rsa
-        #  chmod 600 C:\Users\shahbaz.khan\.ssh\id_rsa
-        #  ssh-keyscan -t rsa localhost >> C:\Users\shahbaz.khan\.ssh\known_hosts
+  build:
+    runs-on: self-hosted
 
-    - name: Install Visual Studio Build Tools
-      run: |
-          # Install Visual Studio Build Tools with Web Development Workload
-          choco install visualstudio2019buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.WebDevelopment --quiet --norestart"
-          
-    - name: Set up .NET 8.0 SDK
-      uses: actions/setup-dotnet@v2
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '8.0'  # Use .NET 6.0 or higher
+        dotnet-version: '6.0.x' # Specify your .NET version
 
     - name: Restore dependencies
       run: dotnet restore
 
-    - name: Create publish directory
-      run: New-Item -ItemType Directory -Force -Path C:\PublishFolder
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
 
-    - name: Publish the application
-      run: dotnet publish -c Release -o C:\PublishFolder
-
-    - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-    - name: Test SSH connection
-      run: ssh -vvv -p 8001 -o StrictHostKeyChecking=no shahbaz.khan@localhost "echo SSH connection successful"
+    - name: Publish
+      run: dotnet publish --configuration Release --output ./publish
 
     - name: Deploy to IIS
       run: |
-        scp -P 8001 -r C:\PublishFolder\* shahbaz.khan@localhost:C:/inetpub/wwwroot/Druk
-        ssh -p 8001 -o StrictHostKeyChecking=no shahbaz.khan@localhost "iisreset"
+        iisreset /stop
+        Copy-Item ./publish/* C:/inetpub/wwwroot/your-app -Recurse -Force
+        iisreset /start

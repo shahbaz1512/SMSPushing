@@ -32,11 +32,6 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Add known hosts
-      run: |
-        mkdir -p ~/.ssh
-        ssh-keyscan -p 8001 localhost >> ~/.ssh/known_hosts
-
     - name: Test SSH connection
       run: ssh -vvv -p 8001 -o StrictHostKeyChecking=no shahbaz.khan@localhost "echo SSH connection successful"
 
